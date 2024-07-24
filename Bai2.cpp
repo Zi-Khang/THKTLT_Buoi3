@@ -34,6 +34,25 @@ void xuatPTDCC(int a[MAX][MAX], int n) {
 	cout << endl;
 }
 
+//3
+void xuatPTSSDCC(int a[MAX][MAX], int n) {
+	//Tren
+	for (int k = 1; k < n; ++k) {
+		for (int i = 0, j = k; j < n; ++i, ++j) {
+			cout << a[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+	//Duoi
+	for (int k = 1; k < n; ++k) {
+		for (int i = k, j = 0; i < n; ++i, ++j) {
+			cout << a[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+
 int main() {
 	int n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -45,6 +64,10 @@ int main() {
 	//2
 	cout << "Cac phan tu tren duong cheo chinh: ";
 	xuatPTDCC(a, n);
+
+	//3
+	cout << "\nCac phan tu thuoc duong cheo song song voi duong cheo chinh: " << endl;
+	xuatPTSSDCC(a, n);
 
 	getch();
 }
