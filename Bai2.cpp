@@ -26,6 +26,14 @@ void taoXuatMaTranVuong(int a[MAX][MAX], int n, int minVal, int maxVal) {
 	}
 }
 
+//2.
+void xuatPTDCC(int a[MAX][MAX], int n) {
+	for (int i = 0; i < n; ++i) {
+		cout << a[i][i] << " ";
+	}
+	cout << endl;
+}
+
 int main() {
 	int n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -34,6 +42,9 @@ int main() {
 	cout << "Tao va xuat ma tran vuong ngau nhien: " << endl;
 	taoXuatMaTranVuong(a, n, minVal, maxVal);
 
+	//2
+	cout << "Cac phan tu tren duong cheo chinh: ";
+	xuatPTDCC(a, n);
 
 	getch();
 }
