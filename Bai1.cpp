@@ -183,6 +183,14 @@ void dongChan(int a[MAX][MAX], int m, int n) {
 	}
 }
 
+//9
+void sapXepDongTang(int a[MAX][MAX], int m, int n) {
+	for (int i = 0; i < m; ++i) {
+		sort(a[i], a[i] + n);
+	}
+}
+
+
 int main() {
 	int m = 5, n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -219,6 +227,15 @@ int main() {
 	cout << "\nDong chi chua so chan: " << endl;
 	dongChan(a, m, n);
 
+	//Bai9
+	sapXepDongTang(a, m, n);
+	cout << "\nMang tang theo tung dong " << endl;
+	for (int i = 0; i < m; ++i) {
+		for (int j = 0; j < n; ++j) {
+			cout << a[i][j] << " ";
+		}
+		cout << endl;
+	}
 
 	getch();
 }
