@@ -38,6 +38,20 @@ void tongGTTungDong(int a[MAX][MAX], int m, int n) {
 	cout << endl;
 }
 
+//3
+void maxOfColumns(int a[MAX][MAX], int m, int n) {
+	for (int j = 0; j < n; j++) {
+		int maxVal = a[0][j];
+		for (int i = 1; i < m; i++) {
+			if (a[i][j] > maxVal) {
+				maxVal = a[i][j];
+			}
+		}
+		cout << "Cot " << j << ": " << maxVal << "\n";
+	}
+	cout << endl;
+}
+
 int main() {
 	int m = 5, n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -49,6 +63,11 @@ int main() {
 	//Bai2
 	cout << "\nTinh va xuat tong gia tri tung dong: \n";
 	tongGTTungDong(a, m, n);
+
+	//Bai3
+	cout << "Xuat phan tu lon nhat tren tung cot: \n";
+	maxOfColumns(a, m, n);
+
 
 	getch();
 }
