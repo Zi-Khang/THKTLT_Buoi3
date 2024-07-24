@@ -52,6 +52,36 @@ void maxOfColumns(int a[MAX][MAX], int m, int n) {
 	cout << endl;
 }
 
+//4
+void xuatPTDuongBien(int a[MAX][MAX], int m, int n) {
+	//Tren
+	cout << "Duong bien tren: " << endl;
+	for (int j = 0; j < n; ++j) {
+		cout << a[0][j] << " ";
+	}
+	cout << endl;
+
+	//Duoi
+	cout << "Duong bien duoi: " << endl;
+	for (int j = 0; j < n; ++j) {
+		cout << a[m - 1][j] << " ";
+	}
+	cout << endl;
+
+	//Trai
+	cout << "Duong bien ben trai: " << endl;
+	for (int i = 0; i < m; ++i) {
+		cout << a[i][0] << " ";
+	}
+	cout << endl;
+
+	//Phai
+	cout << "Duong bien ben phai: " << endl;
+	for (int i = 0; i < m; ++i) {
+		cout << a[i][n - 1] << " ";
+	}
+	cout << endl;
+}
 int main() {
 	int m = 5, n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -68,6 +98,9 @@ int main() {
 	cout << "Xuat phan tu lon nhat tren tung cot: \n";
 	maxOfColumns(a, m, n);
 
+	//Bai4
+	cout << "Xuat cac phan tu thuoc cac duong bien: " << endl;
+	xuatPTDuongBien(a, m, n);
 
 	getch();
 }
