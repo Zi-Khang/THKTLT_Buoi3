@@ -107,6 +107,35 @@ void xuatPTCucDai(int a[MAX][MAX], int m, int n) {
 	}
 	cout << endl;
 }
+
+//6
+void xuatHoangHau(int a[MAX][MAX], int m, int n) {
+	for (int i = 0; i < m; ++i) {
+		for (int j = 0; j < n; ++j) {
+			bool isQueen = true;
+
+			//Ktra hang
+			for (int k = 0; k < n; ++k) {
+				if (k != j && a[i][k] >= a[i][j]) {
+					isQueen = false;
+					break;
+				}
+			}
+
+			//Ktra cot
+			for (int k = 0; k < m; ++k) {
+				if (k != i && a[k][j] >= a[i][j]) {
+					isQueen = false;
+					break;
+				}
+			}
+
+			if (isQueen) cout << a[i][j] << " ";
+		}
+	}
+	cout << endl;
+}
+
 int main() {
 	int m = 5, n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -131,5 +160,8 @@ int main() {
 	cout << "\nCac phan tu cuc dai: ";
 	xuatPTCucDai(a, m, n);
 
+	//Bai6
+	cout << "\nCac phan tu hoang hau: ";
+	xuatHoangHau(a, m, n);
 	getch();
 }
