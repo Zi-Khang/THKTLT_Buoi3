@@ -26,6 +26,18 @@ void hamTaoVaXuatMaTran(int a[MAX][MAX], int m, int n, int minVal, int maxVal) {
 	}
 }
 
+//2
+void tongGTTungDong(int a[MAX][MAX], int m, int n) {
+	for (int i = 0; i < m; ++i) {
+		int sum = 0;
+		for (int j = 0; j < n; ++j) {
+			sum += a[i][j];
+		}
+		cout << "Dong " << i << ": " << sum << "\n";
+	}
+	cout << endl;
+}
+
 int main() {
 	int m = 5, n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -34,6 +46,9 @@ int main() {
 	cout << "Tao va xuat cac phan tu ma tran ngau nhien: " << endl;
 	hamTaoVaXuatMaTran(a, m, n, minVal, maxVal);
 
+	//Bai2
+	cout << "\nTinh va xuat tong gia tri tung dong: \n";
+	tongGTTungDong(a, m, n);
 
 	getch();
 }
