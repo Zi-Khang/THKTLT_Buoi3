@@ -136,6 +136,34 @@ void xuatHoangHau(int a[MAX][MAX], int m, int n) {
 	cout << endl;
 }
 
+//7
+void xuatPTDiemYenNgua(int a[MAX][MAX], int m, int n) {
+	for (int i = 0; i < m; ++i) {
+		for (int j = 0; j < n; ++j) {
+			bool isSaddlePoint = true;
+
+			//Ktra hang
+			for (int k = 0; k < n; ++k) {
+				if (a[i][k] < a[i][j]) {
+					isSaddlePoint = false;
+					break;
+				}
+			}
+
+			//Ktra cot
+			for (int k = 0; k < m; ++k) {
+				if (a[k][j] > a[i][j]) {
+					isSaddlePoint = false;
+					break;
+				}
+			}
+
+			if (isSaddlePoint) cout << a[i][j] << " ";
+		}
+	}
+	cout << endl;
+}
+
 int main() {
 	int m = 5, n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -163,5 +191,11 @@ int main() {
 	//Bai6
 	cout << "\nCac phan tu hoang hau: ";
 	xuatHoangHau(a, m, n);
+
+	//Bai7
+	cout << "\nCac phan tu diem yen ngua: ";
+	xuatPTDiemYenNgua(a, m, n);
+
+
 	getch();
 }
