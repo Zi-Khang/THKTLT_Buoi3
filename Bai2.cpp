@@ -66,6 +66,20 @@ int timPTMaxTamGiacTrenDCC(int a[MAX][MAX], int n) {
 	return maxVal;
 }
 
+//6. 
+void sapXepDCCTang(int a[MAX][MAX], int n) {
+	int temp[MAX];
+	for (int i = 0; i < n; ++i) {
+		temp[i] = a[i][i];
+	}
+
+	sort(temp, temp + n);
+
+	for (int i = 0; i < n; ++i) {
+		a[i][i] = temp[i];
+	}
+}
+
 
 int main() {
 	int n = 5, minVal = 0, maxVal = 10;
@@ -86,6 +100,16 @@ int main() {
 	//4
 	int Max = timPTMaxTamGiacTrenDCC(a, n);
 	cout << "Phan tu Max thuoc tam giac tren DCC: " << Max << endl;
+
+	//6
+	sapXepDCCTang(a, n);
+	cout << "Sap xep duong cheo chinh tang dan tu tren xuong: " << endl;
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < n; ++j) {
+			cout << a[i][j] << " ";
+		}
+		cout << endl;
+	}
 
 	getch();
 }
