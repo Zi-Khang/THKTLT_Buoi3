@@ -82,6 +82,31 @@ void xuatPTDuongBien(int a[MAX][MAX], int m, int n) {
 	}
 	cout << endl;
 }
+
+//5
+void xuatPTCucDai(int a[MAX][MAX], int m, int n) {
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			bool isLocalMax = true;
+			for (int k = -1; k <= 1; k++) {
+				for (int l = -1; l <= 1; l++) {
+					if (k == 0 && l == 0)
+						continue;
+					int ni = i + k, nj = j + l;
+					if (ni >= 0 && ni < m && nj >= 0 && nj < n && a[ni][nj] >= a[i][j]) {
+						isLocalMax = false;
+						break;
+					}
+				}
+				if (!isLocalMax)
+					break;
+			}
+			if (isLocalMax)
+				cout << a[i][j] << " ";
+		}
+	}
+	cout << endl;
+}
 int main() {
 	int m = 5, n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -101,6 +126,10 @@ int main() {
 	//Bai4
 	cout << "Xuat cac phan tu thuoc cac duong bien: " << endl;
 	xuatPTDuongBien(a, m, n);
+
+	//Bai5
+	cout << "\nCac phan tu cuc dai: ";
+	xuatPTCucDai(a, m, n);
 
 	getch();
 }
