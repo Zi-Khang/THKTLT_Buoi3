@@ -53,6 +53,20 @@ void xuatPTSSDCC(int a[MAX][MAX], int n) {
 	}
 }
 
+//4.
+int timPTMaxTamGiacTrenDCC(int a[MAX][MAX], int n) {
+	int maxVal = a[0][0];
+	for (int i = 0; i < n; ++i) {
+		for (int j = i; j < n; ++j) {
+			if (a[i][j] > maxVal) {
+				maxVal = a[i][j];
+			}
+		}
+	}
+	return maxVal;
+}
+
+
 int main() {
 	int n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -68,6 +82,10 @@ int main() {
 	//3
 	cout << "\nCac phan tu thuoc duong cheo song song voi duong cheo chinh: " << endl;
 	xuatPTSSDCC(a, n);
+
+	//4
+	int Max = timPTMaxTamGiacTrenDCC(a, n);
+	cout << "Phan tu Max thuoc tam giac tren DCC: " << Max << endl;
 
 	getch();
 }
