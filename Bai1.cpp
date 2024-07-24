@@ -164,6 +164,25 @@ void xuatPTDiemYenNgua(int a[MAX][MAX], int m, int n) {
 	cout << endl;
 }
 
+//8
+void dongChan(int a[MAX][MAX], int m, int n) {
+	for (int i = 0; i < m; ++i) {
+		bool allEven = true;
+		for (int j = 0; j < n; ++j) {
+			if (a[i][j] % 2 != 0) {
+				allEven = false;
+				break;
+			}
+		}
+		if (allEven) {
+			for (int j = 0; j < n; ++j) {
+				cout << a[i][j] << " ";
+			}
+			cout << endl;
+		}
+	}
+}
+
 int main() {
 	int m = 5, n = 5, minVal = 0, maxVal = 10;
 	int a[MAX][MAX];
@@ -195,6 +214,10 @@ int main() {
 	//Bai7
 	cout << "\nCac phan tu diem yen ngua: ";
 	xuatPTDiemYenNgua(a, m, n);
+
+	//Bai8
+	cout << "\nDong chi chua so chan: " << endl;
+	dongChan(a, m, n);
 
 
 	getch();
